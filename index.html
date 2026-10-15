@@ -9,7 +9,7 @@
     <!-- Подключение шрифтов -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Instrument+Serif:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Instrument+Serif:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -88,7 +88,7 @@
         .nav-right {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 20px;
         }
 
         nav ul {
@@ -116,11 +116,12 @@
             background: transparent;
             border: 1px solid var(--gold);
             color: var(--milk-light);
-            padding: 5px 10px;
+            padding: 6px 16px;
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 0.9rem;
+            font-weight: 600;
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: 20px;
             transition: all 0.3s ease;
         }
 
@@ -308,17 +309,19 @@
             margin-top: 10px;
         }
 
-        /* Адаптивность и Бургер-меню */
+        /* Адаптивность и Мобильное бургер-меню */
         @media (max-width: 768px) {
             .burger-btn {
-                display: block;
+                display: block; /* Иконка бургера видна */
             }
 
-            .nav-right nav ul {
+            /* Все пункты выезжают справа вместе с кнопкой переключения */
+            nav ul {
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 75%;
+                width: 80%;
+                max-width: 300px;
                 height: 100vh;
                 background-color: var(--olive-dark);
                 flex-direction: column;
@@ -331,8 +334,8 @@
                 z-index: 101;
             }
 
-            .nav-right nav ul.active {
-                right: 0;
+            nav ul.active {
+                right: 0 !important;
             }
 
             nav a {
@@ -342,6 +345,7 @@
             .grid-style-4 {
                 grid-template-columns: 1fr;
             }
+
             .card-style-4.president-card {
                 grid-column: auto;
             }
@@ -379,9 +383,6 @@
             </div>
 
             <div class="nav-right">
-                <!-- Кнопка переключения языка -->
-                <button class="lang-switch" id="langSwitch">EN</button>
-
                 <!-- Кнопка бургер-меню -->
                 <button class="burger-btn" id="burgerBtn" aria-label="Открыть меню">
                     <i class="fas fa-bars"></i>
@@ -389,9 +390,10 @@
 
                 <nav>
                     <ul id="navMenu">
+                        <li><button class="lang-switch" id="langSwitch">EN</button></li>
                         <li><a href="#team" class="nav-link" data-i18n="nav_team">КОМАНДА</a></li>
                         <li><a href="https://new-bridge-community.pages.dev/#events" class="nav-link" data-i18n="nav_events">СОБЫТИЯ</a></li>
-                        <li><a href="https://hearto0rg.github.io/NBC-collaboration/" class="nav-link" data-i18n="nav_collab">КОЛЛАБОРАЦИИ</a></li>
+                        <li><a href="https://nbc-collaboration.pages.dev/" class="nav-link" data-i18n="nav_collab">КОЛЛАБОРАЦИИ</a></li>
                         <li><a href="#" class="nav-link" data-i18n="nav_life">Наша Жизнь</a></li>
                         <li><a href="https://new-bridge-community.pages.dev/" class="nav-link"><i class="fas fa-arrow-left"></i> <span data-i18n="nav_main">Main</span></a></li>
                     </ul>
@@ -415,12 +417,12 @@
             <div class="card-style-4 president-card">
                 <img src="./img/image1.png" alt="Канцлер">
                 <div class="content-style-4">
-                    <h3 data-i18n="c chancellor_title">Канцлер</h3>
-                    <p class="role" data-i18n="c chancellor_role">Chancellor</p>
-                    <span class="desc" data-i18n="c chancellor_desc">«Руководство и стратегическое развитие NewBridge Community»</span>
+                    <h3 data-i18n="c_chancellor_title">Канцлер</h3>
+                    <p class="role" data-i18n="c_chancellor_role">Chancellor</p>
+                    <span class="desc" data-i18n="c_chancellor_desc">«Руководство и стратегическое развитие NewBridge Community»</span>
                     <div class="contact-info">
-                        <span>📞 +9989 0082 6808</span>
-                        <span>📞 +9985 0700 8268</span>
+                        <span>📞 +998 90 082 68 08</span>
+                        <span>📞 +998 50 700 82 68</span>
                         <span>✈️ <a href="https://t.me/Asian_ZlatoVlaska" target="_blank">@Asian_ZlatoVlaska</a></span>
                     </div>
                 </div>
@@ -430,9 +432,9 @@
             <div class="card-style-4 secretary-card">
                 <img src="./img/image4.png" alt="Саидова Севинч">
                 <div class="content-style-4">
-                    <h3 data-i18n="c sevinch_name">Саидова Севинч</h3>
-                    <p class="role" data-i18n="c sevinch_role">Канц-секретарь и первый заместитель канцлера</p>
-                    <span class="desc" data-i18n="c sevinch_desc">«Обеспечение оперативного взаимодействия и поддержка стратегических инициатив Канцлера».</span>
+                    <h3 data-i18n="c_sevinch_name">Саидова Севинч</h3>
+                    <p class="role" data-i18n="c_sevinch_role">Канц-секретарь и первый заместитель канцлера</p>
+                    <span class="desc" data-i18n="c_sevinch_desc">«Обеспечение оперативного взаимодействия и поддержка стратегических инициатив Канцлера».</span>
                     <div class="contact-info">
                         <span>📞 +998 88 445 22 62</span>
                         <span>✈️ <a href="https://t.me/saidova1100" target="_blank">@saidova1100</a></span>
@@ -445,8 +447,8 @@
                 <img src="./img/image2.png" alt="Abdullayev Muhammadyusuf">
                 <div class="content-style-4">
                     <h3>Abdullayev Muhammadyusuf</h3>
-                    <p class="role" data-i18n="c muhammad_role">Head of Media Team / Media Director</p>
-                    <span class="desc" data-i18n="c muhammad_desc">Responsible for managing and developing NewBridge's media presence, content creation, social media, and PR strategy. Motivated and multilingual leader passionate about strategic communication.</span>
+                    <p class="role" data-i18n="c_muhammad_role">Head of Media Team / Media Director</p>
+                    <span class="desc" data-i18n="c_muhammad_desc">Responsible for managing and developing NewBridge's media presence, content creation, social media, and PR strategy. Motivated and multilingual leader passionate about strategic communication.</span>
                     <div class="contact-info">
                         <span>📞 +998 91 292 22 71</span>
                         <span>✈️ <a href="https://t.me/Abdullayev_m08" target="_blank">@Abdullayev_m08</a></span>
@@ -458,11 +460,11 @@
             <div class="card-style-4">
                 <img src="./img/image3.png" alt="Саттаров Нурсардор">
                 <div class="content-style-4">
-                    <h3 data-i18n="c nursardor_name">Саттаров Нурсардор</h3>
-                    <p class="role" data-i18n="c nursardor_role">Гендиректор по внешним отношениям и сотрудничеству</p>
-                    <span class="desc" data-i18n="c nursardor_desc">«Сотрудничество с другими студенческими клубами, университетами, организациями, поиск спонсоров и инвесторов. Качества: дисциплина, менеджмент, планирование, опытный участник МУНов».</span>
+                    <h3 data-i18n="c_nursardor_name">Саттаров Нурсардор</h3>
+                    <p class="role" data-i18n="c_nursardor_role">Гендиректор по внешним отношениям и сотрудничеству</p>
+                    <span class="desc" data-i18n="c_nursardor_desc">«Сотрудничество с другими студенческими клубами, университетами, организациями, поиск спонсоров и инвесторов. Качества: дисциплина, менеджмент, планирование, опытный участник МУНов».</span>
                     <div class="contact-info">
-                        <span data-i18n="c nursardor_dep">👥 Заместитель: Толбаева Кунсулу Аскаровна</span>
+                        <span data-i18n="c_nursardor_dep">👥 Заместитель: Толбаева Кунсулу Аскаровна</span>
                         <span>📞 +998 91 192 48 49</span>
                         <span>✈️ <a href="https://t.me/SatNursar" target="_blank">@SatNursar</a></span>
                     </div>
@@ -473,9 +475,9 @@
             <div class="card-style-4">
                 <img src="./img/image5.png" alt="Толбаева Кунсулу">
                 <div class="content-style-4">
-                    <h3 data-i18n="c kunsulu_name">Толбаева Кунсулу Аскаровна</h3>
-                    <p class="role" data-i18n="c kunsulu_role">Заместитель гендиректора по внешним отношениям и сотрудничеству</p>
-                    <span class="desc" data-i18n="c kunsulu_desc">«Сотрудничество с другими студенческими клубами, университетами, организациями, поиск спонсоров и инвесторов. Ответственная, трудолюбивая, целеустремленная и креативная».</span>
+                    <h3 data-i18n="c_kunsulu_name">Толбаева Кунсулу Аскаровна</h3>
+                    <p class="role" data-i18n="c_kunsulu_role">Заместитель гендиректора по внешним отношениям и сотрудничеству</p>
+                    <span class="desc" data-i18n="c_kunsulu_desc">«Сотрудничество с другими студенческими клубами, университетами, организациями, поиск спонсоров и инвесторов. Ответственная, трудолюбивая, целеустремленная и креативная».</span>
                     <div class="contact-info">
                         <span>📞 +998 94 421 11 08</span>
                         <span>✈️ <a href="https://t.me/kunsuluuuu" target="_blank">@kunsuluuuu</a></span>
@@ -487,11 +489,11 @@
             <div class="card-style-4">
                 <img src="./img/image9.png" alt="Саибназаров Дилмурод">
                 <div class="content-style-4">
-                    <h3 data-i18n="c dilmurod_name">Саибназаров Дилмурод Умиджон угли</h3>
-                    <p class="role" data-i18n="c dilmurod_role">Генеральный директор по организации ивентов</p>
-                    <span class="desc" data-i18n="c dilmurod_desc">«Планирование, организация и проведение уникальных мероприятий NewBridge Community».</span>
+                    <h3 data-i18n="c_dilmurod_name">Саибназаров Дилмурод Умиджон угли</h3>
+                    <p class="role" data-i18n="c_dilmurod_role">Генеральный директор по организации ивентов</p>
+                    <span class="desc" data-i18n="c_dilmurod_desc">«Планирование, организация и проведение уникальных мероприятий NewBridge Community».</span>
                     <div class="contact-info">
-                        <span data-i18n="c dilmurod_dep">👥 Заместители: Маматмуродов Асилбек, Сайфуллаев Фирдавс</span>
+                        <span data-i18n="c_dilmurod_dep">👥 Заместители: Маматмуродов Асилбек, Сайфуллаев Фирдавс</span>
                         <span>📞 +998 93 133 85 82</span>
                         <span>✈️ <a href="https://t.me/saibnazarovvvv" target="_blank">@saibnazarovvvv</a></span>
                     </div>
@@ -502,11 +504,11 @@
             <div class="card-style-4">
                 <img src="./img/univ.png" alt="Маматмуродов Асилбек">
                 <div class="content-style-4">
-                    <h3 data-i18n="c asilbek_name">Маматмуродов Асилбек Бахтиёрович</h3>
-                    <p class="role" data-i18n="c asilbek_role">Координатор / Зам. гендиректора по ивентам</p>
-                    <span class="desc" data-i18n="c asilbek_desc">«Владею 4 языками. Стремлюсь к развитию, новым знакомствам и вдохновляющим проектам. Открыт к общению и полезному сотрудничеству».</span>
+                    <h3 data-i18n="c_asilbek_name">Маматмуродов Асилбек Бахтиёрович</h3>
+                    <p class="role" data-i18n="c_asilbek_role">Координатор / Зам. гендиректора по ивентам</p>
+                    <span class="desc" data-i18n="c_asilbek_desc">«Владею 4 языками. Стремлюсь к развитию, новым знакомствам и вдохновляющим проектам. Открыт к общению и полезному сотрудничеству».</span>
                     <div class="contact-info">
-                        <span data-i18n="c asilbek_lead">👥 Руководитель: Саибназаров Дилмурод</span>
+                        <span data-i18n="c_asilbek_lead">👥 Руководитель: Саибназаров Дилмурод</span>
                         <span>📞 +998 95 181 04 01</span>
                         <span>✈️ <a href="https://t.me/ace_asi7" target="_blank">@ace_asi7</a></span>
                     </div>
@@ -517,11 +519,11 @@
             <div class="card-style-4">
                 <img src="./img/univ.png" alt="Сайфуллаев Фирдавс">
                 <div class="content-style-4">
-                    <h3 data-i18n="c firdavs_name">Сайфуллаев Фирдавс Сардорович</h3>
-                    <p class="role" data-i18n="c firdavs_role">Координатор / Зам. гендиректора по ивентам</p>
-                    <span class="desc" data-i18n="c firdavs_desc">«Владею 3 языками. Гибкий, энергичный и ответственный. Быстро вливаюсь в работу и привношу креативные идеи».</span>
+                    <h3 data-i18n="c_firdavs_name">Сайфуллаев Фирдавс Сардорович</h3>
+                    <p class="role" data-i18n="c_firdavs_role">Координатор / Зам. гендиректора по ивентам</p>
+                    <span class="desc" data-i18n="c_firdavs_desc">«Владею 3 языками. Гибкий, энергичный и ответственный. Быстро вливаюсь в работу и привношу креативные идеи».</span>
                     <div class="contact-info">
-                        <span data-i18n="c firdavs_lead">👥 Руководитель: Саибназаров Дилмурод</span>
+                        <span data-i18n="c_firdavs_lead">👥 Руководитель: Саибназаров Дилмурод</span>
                         <span>📞 +998 88 022 15 52</span>
                         <span>✈️ <a href="https://t.me/SayfullayevFirdavs_29" target="_blank">@SayfullayevFirdavs_29</a></span>
                     </div>
@@ -532,11 +534,11 @@
             <div class="card-style-4">
                 <img src="./img/image6.png" alt="Охунов Акмал">
                 <div class="content-style-4">
-                    <h3 data-i18n="c akmal_name">Охунов Акмал Азамжонович</h3>
-                    <p class="role" data-i18n="c akmal_role">Генеральный директор по Community & Volunteers</p>
-                    <span class="desc" data-i18n="c akmal_desc">«Приём и первичная организация новых волонтёров и работников, ведение внутренней базы работников и волонтёров».</span>
+                    <h3 data-i18n="c_akmal_name">Охунов Акмал Азамжонович</h3>
+                    <p class="role" data-i18n="c_akmal_role">Генеральный директор по Community & Volunteers</p>
+                    <span class="desc" data-i18n="c_akmal_desc">«Приём и первичная организация новых волонтёров и работников, ведение внутренней базы работников и волонтёров».</span>
                     <div class="contact-info">
-                        <span data-i18n="c akmal_dep">👥 Заместитель: Нафасов Ойбек</span>
+                        <span data-i18n="c_akmal_dep">👥 Заместитель: Нафасов Ойбек</span>
                         <span>📞 +998 94 888 89 38</span>
                         <span>✈️ <a href="https://t.me/A_ak_m_al" target="_blank">@A_ak_m_al</a></span>
                     </div>
@@ -547,9 +549,9 @@
             <div class="card-style-4">
                 <img src="./img/image7.png" alt="Нафасов Ойбек">
                 <div class="content-style-4">
-                    <h3 data-i18n="c oybek_name">Нафасов Ойбек Зафар угли</h3>
-                    <p class="role" data-i18n="c oybek_role">Заместитель гендиректора по Community & Volunteers</p>
-                    <span class="desc" data-i18n="c oybek_desc">«Приём и первичная организация новых волонтёров и работников, ведение внутренней базы работников и волонтёров. Опыт работы в NewBright Club».</span>
+                    <h3 data-i18n="c_oybek_name">Нафасов Ойбек Зафар угли</h3>
+                    <p class="role" data-i18n="c_oybek_role">Заместитель гендиректора по Community & Volunteers</p>
+                    <span class="desc" data-i18n="c_oybek_desc">«Приём и первичная организация новых волонтёров и работников, ведение внутренней базы работников и волонтёров. Опыт работы в NewBright Club».</span>
                     <div class="contact-info">
                         <span>📞 +998 90 303 33 71</span>
                         <span>✈️ <a href="https://t.me/nafasovv1" target="_blank">@nafasovv1</a></span>
@@ -561,9 +563,9 @@
             <div class="card-style-4">
                 <img src="./img/IMG_1749.JPG" alt="Абдурахмонова Муаззам">
                 <div class="content-style-4">
-                    <h3 data-i18n="c muazzam_name">Абдурахмонова Муаззам</h3>
-                    <p class="role" data-i18n="c muazzam_role">Главный секретарь</p>
-                    <span class="desc" data-i18n="c muazzam_desc">«Я обладаю хорошими навыками в общении с людьми, очень ответственна, люблю организационную работу и взаимодействие с людьми».</span>
+                    <h3 data-i18n="c_muazzam_name">Абдурахмонова Муаззам</h3>
+                    <p class="role" data-i18n="c_muazzam_role">Главный секретарь</p>
+                    <span class="desc" data-i18n="c_muazzam_desc">«Я обладаю хорошими навыками в общении с людьми, очень ответственна, люблю организационную работу и взаимодействие с людьми».</span>
                     <div class="contact-info">
                         <span>📞 +998 94 348 67 76</span>
                         <span>✈️ <a href="https://t.me/abduraxmonova_m09" target="_blank">@abduraxmonova_m09</a></span>
@@ -576,8 +578,8 @@
                 <img src="./img/univ.png" alt="Sipatdinov Alpamis">
                 <div class="content-style-4">
                     <h3>Sipatdinov Alpamis</h3>
-                    <p class="role" data-i18n="c alpamis_role">Assistant & Mobile Videographer</p>
-                    <span class="desc" data-i18n="c alpamis_desc">Personal assistant to Media Director. Responsible for capturing high-quality mobile photos/videos, visual content creation, and media coverage of events.</span>
+                    <p class="role" data-i18n="c_alpamis_role">Assistant & Mobile Videographer</p>
+                    <span class="desc" data-i18n="c_alpamis_desc">Personal assistant to Media Director. Responsible for capturing high-quality mobile photos/videos, visual content creation, and media coverage of events.</span>
                     <div class="contact-info">
                         <span>📞 +998 xx xxx xx xx</span>
                     </div>
@@ -638,62 +640,62 @@
                 team_title: "Наша Команда",
                 
                 // Карточки команды
-                "c chancellor_title": "Канцлер",
-                "c chancellor_role": "Chancellor",
-                "c chancellor_desc": "«Руководство и стратегическое развитие NewBridge Community»",
+                "c_chancellor_title": "Канцлер",
+                "c_chancellor_role": "Chancellor",
+                "c_chancellor_desc": "«Руководство и стратегическое развитие NewBridge Community»",
 
-                "c sevinch_name": "Саидова Севинч",
-                "c sevinch_role": "Канц-секретарь и первый заместитель канцлера",
-                "c sevinch_desc": "«Обеспечение оперативного взаимодействия и поддержка стратегических инициатив Канцлера».",
+                "c_sevinch_name": "Саидова Севинч",
+                "c_sevinch_role": "Канц-секретарь и первый заместитель канцлера",
+                "c_sevinch_desc": "«Обеспечение оперативного взаимодействия и поддержка стратегических инициатив Канцлера».",
 
-                "c muhammad_role": "Head of Media Team / Media Director",
-                "c muhammad_desc": "Responsible for managing and developing NewBridge's media presence, content creation, social media, and PR strategy. Motivated and multilingual leader passionate about strategic communication.",
+                "c_muhammad_role": "Head of Media Team / Media Director",
+                "c_muhammad_desc": "Отвечает за управление и развитие медиа-присутствия NewBridge, создание контента, социальные сети и PR-стратегию. Мотивированный многоязычный лидер, увлеченный стратегическими коммуникациями.",
 
-                "c nursardor_name": "Саттаров Нурсардор",
-                "c nursardor_role": "Гендиректор по внешним отношениям и сотрудничеству",
-                "c nursardor_desc": "«Сотрудничество с другими студенческими клубами, университетами, организациями, поиск спонсоров и инвесторов. Качества: дисциплина, менеджмент, планирование, опытный участник МУНов».",
-                "c nursardor_dep": "👥 Заместитель: Толбаева Кунсулу Аскаровна",
+                "c_nursardor_name": "Саттаров Нурсардор",
+                "c_nursardor_role": "Гендиректор по внешним отношениям и сотрудничеству",
+                "c_nursardor_desc": "«Сотрудничество с другими студенческими клубами, университетами, организациями, поиск спонсоров и инвесторов. Качества: дисциплина, менеджмент, планирование, опытный участник МУНов».",
+                "c_nursardor_dep": "👥 Заместитель: Толбаева Кунсулу Аскаровна",
 
-                "c kunsulu_name": "Толбаева Кунсулу Аскаровна",
-                "c kunsulu_role": "Заместитель гендиректора по внешним отношениям и сотрудничеству",
-                "c kunsulu_desc": "«Сотрудничество с другими студенческими клубами, университетами, организациями, поиск спонсоров и инвесторов. Ответственная, трудолюбивая, целеустремленная и креативная».",
+                "c_kunsulu_name": "Толбаева Кунсулу Аскаровна",
+                "c_kunsulu_role": "Заместитель гендиректора по внешним отношениям и сотрудничеству",
+                "c_kunsulu_desc": "«Сотрудничество с другими студенческими клубами, университетами, организациями, поиск спонсоров и инвесторов. Ответственная, трудолюбивая, целеустремленная и креативная».",
 
-                "c dilmurod_name": "Саибназаров Дилмурод Умиджон угли",
-                "c dilmurod_role": "Генеральный директор по организации ивентов",
-                "c dilmurod_desc": "«Планирование, организация и проведение уникальных мероприятий NewBridge Community».",
-                "c dilmurod_dep": "👥 Заместители: Маматмуродов Асилбек, Сайфуллаев Фирдавс",
+                "c_dilmurod_name": "Саибназаров Дилмурод Умиджон угли",
+                "c_dilmurod_role": "Генеральный директор по организации ивентов",
+                "c_dilmurod_desc": "«Планирование, организация и проведение уникальных мероприятий NewBridge Community».",
+                "c_dilmurod_dep": "👥 Заместители: Маматмуродов Асилбек, Сайфуллаев Фирдавс",
 
-                "c asilbek_name": "Маматмуродов Асилбек Бахтиёрович",
-                "c asilbek_role": "Координатор / Зам. гендиректора по ивентам",
-                "c asilbek_desc": "«Владею 4 языками. Стремлюсь к развитию, новым знакомствам и вдохновляющим проектам. Открыт к общению и полезному сотрудничеству».",
-                "c asilbek_lead": "👥 Руководитель: Саибназаров Дилмурод",
+                "c_asilbek_name": "Маматмуродов Асилбек Бахтиёрович",
+                "c_asilbek_role": "Координатор / Зам. гендиректора по ивентам",
+                "c_asilbek_desc": "«Владею 4 языками. Стремлюсь к развитию, новым знакомствам и вдохновляющим проектам. Открыт к общению и полезному сотрудничеству».",
+                "c_asilbek_lead": "👥 Руководитель: Саибназаров Дилмурод",
 
-                "c firdavs_name": "Сайфуллаев Фирдавс Сардорович",
-                "c firdavs_role": "Координатор / Зам. гендиректора по ивентам",
-                "c firdavs_desc": "«Владею 3 языками. Гибкий, энергичный и ответственный. Быстро вливаюсь в работу и привношу креативные идеи».",
-                "c firdavs_lead": "👥 Руководитель: Саибназаров Дилмурод",
+                "c_firdavs_name": "Сайфуллаев Фирдавс Сардорович",
+                "c_firdavs_role": "Координатор / Зам. гендиректора по ивентам",
+                "c_firdavs_desc": "«Владею 3 языками. Гибкий, энергичный и ответственный. Быстро вливаюсь в работу и привношу креативные идеи».",
+                "c_firdavs_lead": "👥 Руководитель: Саибназаров Дилмурод",
 
-                "c akmal_name": "Охунов Акмал Азамжонович",
-                "c akmal_role": "Генеральный директор по Community & Volunteers",
-                "c akmal_desc": "«Приём и первичная организация новых волонтёров и работников, ведение внутренней базы работников и волонтёров».",
-                "c akmal_dep": "👥 Заместитель: Нафасов Ойбек",
+                "c_akmal_name": "Охунов Акмал Азамжонович",
+                "c_akmal_role": "Генеральный директор по Community & Volunteers",
+                "c_akmal_desc": "«Приём и первичная организация новых волонтёров и работников, ведение внутренней базы работников и волонтёров».",
+                "c_akmal_dep": "👥 Заместитель: Нафасов Ойбек",
 
-                "c oybek_name": "Нафасов Ойбек Зафар угли",
-                "c oybek_role": "Заместитель гендиректора по Community & Volunteers",
-                "c oybek_desc": "«Приём и первичная организация новых волонтёров и работников, ведение внутренней базы работников и волонтёров. Опыт работы в NewBright Club».",
+                "c_oybek_name": "Нафасов Ойбек Зафар угли",
+                "c_oybek_role": "Заместитель гендиректора по Community & Volunteers",
+                "c_oybek_desc": "«Приём и первичная организация новых волонтёров и работников, ведение внутренней базы работников и волонтёров. Опыт работы в NewBright Club».",
 
-                "c muazzam_name": "Абдурахмонова Муаззам",
-                "c muazzam_role": "Главный секретарь",
-                "c muazzam_desc": "«Я обладаю хорошими навыками в общении с людьми, очень ответственна, люблю организационную работу и взаимодействие с людьми».",
+                "c_muazzam_name": "Абдурахмонова Муаззам",
+                "c_muazzam_role": "Главный секретарь",
+                "c_muazzam_desc": "«Я обладаю хорошими навыками в общении с людьми, очень ответственна, люблю организационную работу и взаимодействие с людьми».",
 
-                "c alpamis_role": "Assistant & Mobile Videographer",
-                "c alpamis_desc": "Personal assistant to Media Director. Responsible for capturing high-quality mobile photos/videos, visual content creation, and media coverage of events.",
+                "c_alpamis_role": "Assistant & Mobile Videographer",
+                "c_alpamis_desc": "Личный ассистент медиа-директора. Отвечает за съемку качественных фото/видео, создание визуального контента и медиа-освещение мероприятий.",
 
-                footer_address: "newbridge@gmail.com | 100007, Oʻzbekiston, Toshkent, Mustaqillik shoh koʻchasi, 54"
+                footer_address: "newbridge@gmail.com | 100007, Узбекистан, Ташкент, проспект Мустакиллик, 54"
             },
             en: {
                 title: "NewBridge Community - Our Team",
-                nav_link: "TEAM",
+                nav_team: "TEAM",
                 nav_events: "EVENTS",
                 nav_collab: "COLLABORATIONS",
                 nav_life: "Our Life",
@@ -702,56 +704,56 @@
                 team_title: "Our Team",
 
                 // Team Cards translations (EN)
-                "c chancellor_title": "Chancellor",
-                "c chancellor_role": "Chancellor",
-                "c chancellor_desc": "«Leadership and strategic development of NewBridge Community»",
+                "c_chancellor_title": "Chancellor",
+                "c_chancellor_role": "Chancellor",
+                "c_chancellor_desc": "«Leadership and strategic development of NewBridge Community»",
 
-                "c sevinch_name": "Saidova Sevinch",
-                "c sevinch_role": "Chancellor Secretary & First Deputy Chancellor",
-                "c sevinch_desc": "«Ensuring operational interaction and supporting the Chancellor's strategic initiatives».",
+                "c_sevinch_name": "Saidova Sevinch",
+                "c_sevinch_role": "Chancellor Secretary & First Deputy Chancellor",
+                "c_sevinch_desc": "«Ensuring operational interaction and supporting the Chancellor's strategic initiatives».",
 
-                "c muhammad_role": "Head of Media Team / Media Director",
-                "c muhammad_desc": "Responsible for managing and developing NewBridge's media presence, content creation, social media, and PR strategy. Motivated and multilingual leader passionate about strategic communication.",
+                "c_muhammad_role": "Head of Media Team / Media Director",
+                "c_muhammad_desc": "Responsible for managing and developing NewBridge's media presence, content creation, social media, and PR strategy. Motivated and multilingual leader passionate about strategic communication.",
 
-                "c nursardor_name": "Sattarov Nursardor",
-                "c nursardor_role": "CEO for External Relations and Cooperation",
-                "c nursardor_desc": "«Cooperation with other student clubs, universities, organizations, search for sponsors and investors. Qualities: discipline, management, planning, experienced MUN participant».",
-                "c nursardor_dep": "👥 Deputy: Tolbaeva Kunsulu Askarovna",
+                "c_nursardor_name": "Sattarov Nursardor",
+                "c_nursardor_role": "CEO for External Relations and Cooperation",
+                "c_nursardor_desc": "«Cooperation with other student clubs, universities, organizations, search for sponsors and investors. Qualities: discipline, management, planning, experienced MUN participant».",
+                "c_nursardor_dep": "👥 Deputy: Tolbaeva Kunsulu Askarovna",
 
-                "c kunsulu_name": "Tolbaeva Kunsulu Askarovna",
-                "c kunsulu_role": "Deputy CEO for External Relations and Cooperation",
-                "c kunsulu_desc": "«Cooperation with other student clubs, universities, organizations, search for sponsors and investors. Responsible, hardworking, purposeful and creative».",
+                "c_kunsulu_name": "Tolbaeva Kunsulu Askarovna",
+                "c_kunsulu_role": "Deputy CEO for External Relations and Cooperation",
+                "c_kunsulu_desc": "«Cooperation with other student clubs, universities, organizations, search for sponsors and investors. Responsible, hardworking, purposeful and creative».",
 
-                "c dilmurod_name": "Saibnazarov Dilmurod Umidjon ugli",
-                "c dilmurod_role": "CEO for Event Organization",
-                "c dilmurod_desc": "«Planning, organization and execution of unique NewBridge Community events».",
-                "c dilmurod_dep": "👥 Deputies: Mamatmurodov Asilbek, Sayfullayev Firdavs",
+                "c_dilmurod_name": "Saibnazarov Dilmurod Umidjon ugli",
+                "c_dilmurod_role": "CEO for Event Organization",
+                "c_dilmurod_desc": "«Planning, organization and execution of unique NewBridge Community events».",
+                "c_dilmurod_dep": "👥 Deputies: Mamatmurodov Asilbek, Sayfullayev Firdavs",
 
-                "c asilbek_name": "Mamatmurodov Asilbek Bakhtiyorovich",
-                "c asilbek_role": "Coordinator / Deputy CEO for Events",
-                "c asilbek_desc": "«Fluent in 4 languages. Striving for development, new acquaintances and inspiring projects. Open to communication and useful cooperation».",
-                "c asilbek_lead": "👥 Head: Saibnazarov Dilmurod",
+                "c_asilbek_name": "Mamatmurodov Asilbek Bakhtiyorovich",
+                "c_asilbek_role": "Coordinator / Deputy CEO for Events",
+                "c_asilbek_desc": "«Fluent in 4 languages. Striving for development, new acquaintances and inspiring projects. Open to communication and useful cooperation».",
+                "c_asilbek_lead": "👥 Head: Saibnazarov Dilmurod",
 
-                "c firdavs_name": "Sayfullayev Firdavs Sardarovich",
-                "c firdavs_role": "Coordinator / Deputy CEO for Events",
-                "c firdavs_desc": "«Fluent in 3 languages. Flexible, energetic and responsible. Quickly adapt to work and bring creative ideas».",
-                "c firdavs_lead": "👥 Head: Saibnazarov Dilmurod",
+                "c_firdavs_name": "Sayfullayev Firdavs Sardarovich",
+                "c_firdavs_role": "Coordinator / Deputy CEO for Events",
+                "c_firdavs_desc": "«Fluent in 3 languages. Flexible, energetic and responsible. Quickly adapt to work and bring creative ideas».",
+                "c_firdavs_lead": "👥 Head: Saibnazarov Dilmurod",
 
-                "c akmal_name": "Okhunov Akmal Azamjonovich",
-                "c akmal_role": "CEO for Community & Volunteers",
-                "c akmal_desc": "«Admission and primary organization of new volunteers and workers, maintenance of the internal database of workers and volunteers».",
-                "c akmal_dep": "👥 Deputy: Nafasov Oybek",
+                "c_akmal_name": "Okhunov Akmal Azamjonovich",
+                "c_akmal_role": "CEO for Community & Volunteers",
+                "c_akmal_desc": "«Admission and primary organization of new volunteers and workers, maintenance of the internal database of workers and volunteers».",
+                "c_akmal_dep": "👥 Deputy: Nafasov Oybek",
 
-                "c oybek_name": "Nafasov Oybek Zafar ugli",
-                "c oybek_role": "Deputy CEO for Community & Volunteers",
-                "c oybek_desc": "«Admission and primary organization of new volunteers and workers, maintenance of the internal database of workers and volunteers. Experience in NewBright Club».",
+                "c_oybek_name": "Nafasov Oybek Zafar ugli",
+                "c_oybek_role": "Deputy CEO for Community & Volunteers",
+                "c_oybek_desc": "«Admission and primary organization of new volunteers and workers, maintenance of the internal database of workers and volunteers. Experience in NewBright Club».",
 
-                "c muazzam_name": "Abdurakhmonova Muazzam",
-                "c muazzam_role": "Chief Secretary",
-                "c muazzam_desc": "«I have good communication skills, I am very responsible, I love organizational work and interaction with people».",
+                "c_muazzam_name": "Abdurakhmonova Muazzam",
+                "c_muazzam_role": "Chief Secretary",
+                "c_muazzam_desc": "«I have good communication skills, I am very responsible, I love organizational work and interaction with people».",
 
-                "c alpamis_role": "Assistant & Mobile Videographer",
-                "c alpamis_desc": "Personal assistant to Media Director. Responsible for capturing high-quality mobile photos/videos, visual content creation, and media coverage of events.",
+                "c_alpamis_role": "Assistant & Mobile Videographer",
+                "c_alpamis_desc": "Personal assistant to Media Director. Responsible for capturing high-quality mobile photos/videos, visual content creation, and media coverage of events.",
 
                 footer_address: "newbridge@gmail.com | 100007, Uzbekistan, Tashkent, Mustaqillik Avenue, 54"
             }
